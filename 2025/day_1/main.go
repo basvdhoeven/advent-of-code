@@ -16,9 +16,9 @@ func main() {
 	defer file.Close()
 
 
-	dial := 50
-	zeroPointings := 0
-	zeroPassings := 0
+	dial := 50 // starting number
+	var zeroPointings, zeroPassings int
+
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		if scanner.Text() == "" {
@@ -32,16 +32,19 @@ func main() {
 			panic(err)
 		}
 
+		// Moving the dial left.
 		if strings.HasPrefix(line, "L") {
 			zeroPassings += dial/100 - (dial-rotation)/100
 			dial -= rotation
 		}
+
+		// Moving the dial right.
 		if strings.HasPrefix(line, "R") {
 			zeroPassings += (dial+rotation)/100 - dial/100
 			dial += rotation
 		}
 
-		// check if dial is at zero
+		// check if dial is at zero.
 		if dial % 100 == 0 {
 			zeroPointings++
 		}
