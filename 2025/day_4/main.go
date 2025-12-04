@@ -21,53 +21,53 @@ func part1(paperRolls []string) {
 	// loop through each location
 	for i := 0; i <= lastColumn; i++ {
 		for j := 0; j <= lastRow; j++ {
-			if paperRolls[i][j] != 64 {
+			if paperRolls[i][j] != '@' {
 				continue // not a paper roll.
 			}
 
 			var nearbyRolls int
 			if i > 0 {
 				// row above exists
-				if paperRolls[i-1][j] == 64 {
+				if paperRolls[i-1][j] == '@' {
 					nearbyRolls++ // directly above
 				}
 				if j < lastColumn {
 					// top right location exists
-					if paperRolls[i-1][j+1] == 64 {
+					if paperRolls[i-1][j+1] == '@' {
 						nearbyRolls++
 					}
 				}
 				if j > 0 {
 					// top left location exists
-					if paperRolls[i-1][j-1] == 64 {
+					if paperRolls[i-1][j-1] == '@' {
 						nearbyRolls++
 					}
 				}
 			}
 
 			// check position to the right
-			if j < lastColumn && paperRolls[i][j+1] == 64 {
+			if j < lastColumn && paperRolls[i][j+1] == '@' {
 				nearbyRolls++
 			}
 			// check position to the left
-			if j > 0 && paperRolls[i][j-1] == 64 {
+			if j > 0 && paperRolls[i][j-1] == '@' {
 				nearbyRolls++
 			}
 
 			if i < lastRow {
 				// row below exists
-				if paperRolls[i+1][j] == 64 {
+				if paperRolls[i+1][j] == '@' {
 					nearbyRolls++ // directly below
 				}
 				if j < lastColumn {
 					// bottom right location exists
-					if paperRolls[i+1][j+1] == 64 {
+					if paperRolls[i+1][j+1] == '@' {
 						nearbyRolls++
 					}
 				}
 				if j > 0 {
 					// bottom left location exists
-					if paperRolls[i+1][j-1] == 64 {
+					if paperRolls[i+1][j-1] == '@' {
 						nearbyRolls++
 					}
 				}
@@ -92,53 +92,53 @@ func part2(paperRolls []string) {
 		// loop through each location
 		for i := 0; i <= lastColumn; i++ {
 			for j := 0; j <= lastRow; j++ {
-				if paperRolls[i][j] != 64 {
+				if paperRolls[i][j] != '@' {
 					continue // not a paper roll.
 				}
 
 				var nearbyRolls int
 				if i > 0 {
 					// row above exists
-					if paperRolls[i-1][j] == 64 {
+					if paperRolls[i-1][j] == '@' {
 						nearbyRolls++ // directly above
 					}
 					if j < lastColumn {
 						// top right location exists
-						if paperRolls[i-1][j+1] == 64 {
+						if paperRolls[i-1][j+1] == '@' {
 							nearbyRolls++
 						}
 					}
 					if j > 0 {
 						// top left location exists
-						if paperRolls[i-1][j-1] == 64 {
+						if paperRolls[i-1][j-1] == '@' {
 							nearbyRolls++
 						}
 					}
 				}
 
 				// check position to the right
-				if j < lastColumn && paperRolls[i][j+1] == 64 {
+				if j < lastColumn && paperRolls[i][j+1] == '@' {
 					nearbyRolls++
 				}
 				// check position to the left
-				if j > 0 && paperRolls[i][j-1] == 64 {
+				if j > 0 && paperRolls[i][j-1] == '@' {
 					nearbyRolls++
 				}
 
 				if i < lastRow {
 					// row below exists
-					if paperRolls[i+1][j] == 64 {
+					if paperRolls[i+1][j] == '@' {
 						nearbyRolls++ // directly below
 					}
 					if j < lastColumn {
 						// bottom right location exists
-						if paperRolls[i+1][j+1] == 64 {
+						if paperRolls[i+1][j+1] == '@' {
 							nearbyRolls++
 						}
 					}
 					if j > 0 {
 						// bottom left location exists
-						if paperRolls[i+1][j-1] == 64 {
+						if paperRolls[i+1][j-1] == '@' {
 							nearbyRolls++
 						}
 					}
