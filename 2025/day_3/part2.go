@@ -25,13 +25,12 @@ func main() {
 		line := scanner.Text()
 
 		numberOfBatteries := 12
-		var indexNumber int 
-
+		var nextIndexNumber int
 		var maxJoltage string
 
-		for endOffset := numberOfBatteries;  endOffset >= 0; endOffset-- {
+		for endOffset := numberOfBatteries-1; endOffset >= 0; endOffset-- {
 			var maxNumber byte
-			indexNumber, maxNumber = getMaxNumber(line, indexNumber+1,  len(line)-endOffset-1)
+			nextIndexNumber, maxNumber = getMaxNumber(line, nextIndexNumber, len(line)-endOffset-1)
 			maxJoltage += string(maxNumber)
 		}
 
@@ -54,5 +53,5 @@ func getMaxNumber(s string, startIndex, endIndex int) (int, byte) {
 		}
 	}
 
-	return maxIndex, maxByte
+	return maxIndex + 1, maxByte
 }
