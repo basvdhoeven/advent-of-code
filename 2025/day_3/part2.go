@@ -28,7 +28,7 @@ func main() {
 		var nextIndexNumber int
 		var maxJoltage string
 
-		for endOffset := numberOfBatteries-1; endOffset >= 0; endOffset-- {
+		for endOffset := numberOfBatteries - 1; endOffset >= 0; endOffset-- {
 			var maxNumber byte
 			nextIndexNumber, maxNumber = getMaxNumber(line, nextIndexNumber, len(line)-endOffset-1)
 			maxJoltage += string(maxNumber)
